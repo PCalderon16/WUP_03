@@ -45,6 +45,19 @@ favstats(alcohol~Seat,data=davisdata)
 The table above indicates the number of people seated at each row. The column named "n" shows that there are 32 people seated at the back row, 33 people seated at the front row, and 83 people seated at the middle row. Although the middle row has the most number of people, the mean value for each row shows that the people at the back row consume the most amount of alcohol. More specifically, the people seated at the back row, on average, consume 3 times the amount of alcohol consumed by people on the fist row and 2 times the amount consumed by people seated on the middle row. 
   
 ## Inferential Tests
+  
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+  
+The p-value in the analysis of variance is low based on the t-test. It means that we've encountered a problem, and this test would require another type of test to provide a more reliable data. 
+
+```{r}
+plot(TukeyHSD(model1))
+```
+  
+Given that the confidence interval between alcohol consumption of people at the front and back and the confidence interval between the alcohol consumption of the people at the middle and back do not cross the zero mark, it means that there is no significant difference between the alcohol consumption of the people at the front and the middle. In order words, the front row and the back row are different from each other; the middle and the back are also different. Meanwhile, the front and the middle do not have a significant difference. 
 
 ## Conclusions
 
