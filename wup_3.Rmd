@@ -38,7 +38,12 @@ basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='e
 Based on the box plot above, the people seated at the back row generally consume more alcohol given that the interquartile range is higher than the interquartile ranges of the alcohol consumption of the people seated at the front and middle rows. There are a few outliers on all rows, but mostly people seated at the back consume more alcohol.  
 
 ## Numerical Summarys 
-
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+````
+  
+The table above indicates the number of people seated at each row. The column named "n" shows that there are 32 people seated at the back row, 33 people seated at the front row, and 83 people seated at the middle row. Although the middle row has the most number of people, the mean value for each row shows that the people at the back row consume the most amount of alcohol. More specifically, the people seated at the back row, on average, consume 3 times the amount of alcohol consumed by people on the fist row and 2 times the amount consumed by people seated on the middle row. 
+  
 ## Inferential Tests
 
 ## Conclusions
